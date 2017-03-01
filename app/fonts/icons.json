@@ -1,0 +1,34 @@
+{
+    "icons": [
+        {
+            "id": "arrow-down",
+            "name": "Arrow Down",
+            "unicode": "e001"
+        },
+        {
+            "id": "arrow-left",
+            "name": "Arrow Left",
+            "unicode": "e002"
+        },
+        {
+            "id": "arrow-right",
+            "name": "Arrow Right",
+            "unicode": "e003"
+        },
+        {
+            "id": "arrow-up",
+            "name": "Arrow Up",
+            "unicode": "e004"
+        },
+        {
+            "id": "google",
+            "name": "Google",
+            "unicode": "e005"
+        },
+        {
+            "id": "remove",
+            "name": "Remove",
+            "unicode": "e006"
+        }
+    ]
+}

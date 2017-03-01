@@ -1,0 +1,341 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Icons</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+
+  <style type="text/css">
+      .icon-binary {
+          font-family: "glyphicons";
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: normal;
+          text-decoration: none;
+          text-transform: none;
+      }
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        
+        box-sizing: border-box; 
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      body > section {
+        flex: 1;
+      }
+      
+      html, body {
+        min-width: 30rem;
+      }
+
+      body > header, body > section, body > footer {
+        width: 100%;
+      }
+
+      body > header {
+        color: #fff;
+        background-color: #0074C8;
+      }
+      body > footer {
+        padding-bottom: 2rem;
+      }
+      
+      .my-class-name:before {
+          content: "\e001";
+      }
+      ul,
+      li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+      ul li {
+          float: left;
+          text-align: center;
+      }
+      ul li:hover {
+          background: #ddd;
+      }
+      .class-name li {
+          padding: 10px;
+      }
+      .icon-show-type {
+          clear: both;
+      }
+      .icon-show-type li span {
+          display: block;
+          padding: 0.5rem;
+      }
+      .icon-show-type input {
+          display: none;
+      }
+      .icon-show-type input:checked ~ span {
+          background: #ddd;
+      }
+      i {
+          display: block;
+      }
+      .class-name li,
+      .hex li,
+      .binary li {
+          display: none;
+      }
+      .class-name .class-name-demo {
+          display: block;
+      }
+      .class-name .class-name-demo i {
+          margin-bottom: 1rem;
+      }
+      .clearfix:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden
+      }
+
+      /*
+      * Glyphicons
+      *
+      * Special styles for displaying the icons and their classes in the docs.
+      */
+      
+      .bs-flex {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .bs-glyphicons h3, .bs-glyphicons h4, .bs-glyphicons hr {
+        width: 100%;
+      }
+      ul.bs-glyphicons-list {
+        margin-bottom: 2rem;
+      }
+      .bs-glyphicons-list {
+        list-style: none;
+      }
+      .bs-glyphicons li {
+        float: left;
+        padding: 2rem;
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: center;
+        background-color: #f9f9f9;
+        border: 1px solid #fff;
+      }
+      .bs-glyphicons .icon {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+      .bs-glyphicons .glyphicon-class {
+        display: block;
+        text-align: center;
+        word-wrap: break-word; /* Help out IE10+ with class names */
+      }
+      .bs-glyphicons li:hover {
+        color: #fff;
+        background-color: #0074C8;
+      }
+
+      @media (min-width: 768px) {
+        .bs-glyphicons li {
+          font-size: 12px;
+        }
+      }
+
+    </style>
+</head>
+
+<body>
+  <header class="container-fluid">
+    <div class="row">
+
+      <!--[if IE]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div class="col-xs-12">
+        <h3>Icons</h3>
+        <br />
+      </div>
+    </div>
+  </header>
+  <section class="container-fluid">
+    <div class="row">
+      <div class="bs-glyphicons col-xs-12">
+        <h4>Available Glyphs</h4>
+        <hr/>
+        <ul class="bs-glyphicons-list bs-flex">
+          
+            <li class="col-xs-6 col-sm-2 col-xl-1" title="Arrow Down">
+              <i class="icon icon-arrow-down"></i>
+              <span class="glyphicon-class">.icon-arrow-down</span>
+            </li>
+            
+            <li class="col-xs-6 col-sm-2 col-xl-1" title="Arrow Left">
+              <i class="icon icon-arrow-left"></i>
+              <span class="glyphicon-class">.icon-arrow-left</span>
+            </li>
+            
+            <li class="col-xs-6 col-sm-2 col-xl-1" title="Arrow Right">
+              <i class="icon icon-arrow-right"></i>
+              <span class="glyphicon-class">.icon-arrow-right</span>
+            </li>
+            
+            <li class="col-xs-6 col-sm-2 col-xl-1" title="Arrow Up">
+              <i class="icon icon-arrow-up"></i>
+              <span class="glyphicon-class">.icon-arrow-up</span>
+            </li>
+            
+            <li class="col-xs-6 col-sm-2 col-xl-1" title="Google">
+              <i class="icon icon-google"></i>
+              <span class="glyphicon-class">.icon-google</span>
+            </li>
+            
+            <li class="col-xs-6 col-sm-2 col-xl-1" title="Remove">
+              <i class="icon icon-remove"></i>
+              <span class="glyphicon-class">.icon-remove</span>
+            </li>
+            
+        </ul>
+      </div>
+      <div class="bs-glyphicons">
+        <div class="col-xs-12">
+          <h4>Example:</h4>
+          <hr/>
+        </div>
+        <ul class="bs-glyphicons-list col-xs-3">
+          <li class="col-xs-12" title="Arrow Down">
+            <i class="icon icon-arrow-down"></i>
+          </li>
+        </ul>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <pre>&lt;i class="icon icon-arrow-down"&gt;&lt;/i&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <hr />
+        <span class="copyright-year">&copy; 2017</span> Company
+      </div>
+    </div>
+  </footer>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/plugins.js -->
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+
+  <script>
+      console.info('load:', {'glyphs':[
+        {
+          id:"arrow-down",
+          
+          name:"Arrow Down",
+          
+          unicode:"e001",
+          
+        },
+        
+        {
+          id:"arrow-left",
+          
+          name:"Arrow Left",
+          
+          unicode:"e002",
+          
+        },
+        
+        {
+          id:"arrow-right",
+          
+          name:"Arrow Right",
+          
+          unicode:"e003",
+          
+        },
+        
+        {
+          id:"arrow-up",
+          
+          name:"Arrow Up",
+          
+          unicode:"e004",
+          
+        },
+        
+        {
+          id:"google",
+          
+          name:"Google",
+          
+          unicode:"e005",
+          
+        },
+        
+        {
+          id:"remove",
+          
+          name:"Remove",
+          
+          unicode:"e006",
+          
+        },
+        ]});
+    </script>
+</body>
+
+</html>
