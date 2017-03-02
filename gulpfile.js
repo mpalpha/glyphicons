@@ -27,7 +27,7 @@ gulp.task('iconfont', () => {
       formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
       timestamp: Math.round(Date.now()/1000), // recommended to get consistent builds when watching files
       fontName: fontName,
-      fontHeight: 512,
+      fontHeight: 1001,
       descent: 50,
      }))
     .on('glyphs', function(glyphs){
