@@ -25,27 +25,27 @@ gulp.task('iconfont', () => {
       appendUnicode: true,
       normalize: true,
       formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
-      timestamp: Math.round(Date.now()/1000), // recommended to get consistent builds when watching files
+      timestamp: Math.round(Date.now() / 1000), // recommended to get consistent builds when watching files
       fontName: fontName,
       fontHeight: 1001,
       descent: 50,
-     }))
-    .on('glyphs', function(glyphs){
+    }))
+    .on('glyphs', function (glyphs) {
       // build icons.json file
       var glyphsFiltered = [];
-      glyphs.forEach(function(glyph){
-          glyphsFiltered.push({
-            id: glyph.name.replace(/\s/g, '-').toLowerCase(),
-            name: glyph.name.replace(/-/g, ' ').toLowerCase().toLowerCase().replace( /\b\w/g, function (m) { return m.toUpperCase();}),
-            unicode: glyph.unicode[0].charCodeAt(0).toString(16).toLowerCase()
-          });
+      glyphs.forEach(function (glyph) {
+        glyphsFiltered.push({
+          id: glyph.name.replace(/\s/g, '-').toLowerCase(),
+          name: glyph.name.replace(/-/g, ' ').toLowerCase().toLowerCase().replace(/\b\w/g, function (m) { return m.toUpperCase(); }),
+          unicode: glyph.unicode[0].charCodeAt(0).toString(16).toLowerCase()
+        });
       });
-      
-      $.file('icons.json', JSON.stringify({icons:glyphsFiltered}, null, 4))
+
+      $.file('icons.json', JSON.stringify({ icons: glyphsFiltered }, null, 4))
         .pipe(gulp.dest('app/fonts/'))
 
       gulp.src('./assets/templates/index.html')
-        .pipe($.debug({title: 'consolidate:'}))
+        .pipe($.debug({ title: 'consolidate:' }))
         .pipe($.consolidate('lodash', {
           glyphs: glyphs,
           glyphsFiltered: glyphsFiltered,
@@ -67,10 +67,10 @@ gulp.task('styles', () => {
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
     .pipe($.if(dev, $.sourcemaps.write()))
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(reload({stream: true}));
+    .pipe(reload({ stream: true }));
 });
 
 gulp.task('scripts', () => {
@@ -80,13 +80,13 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.if(dev, $.sourcemaps.write('.')))
     .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
+    .pipe(reload({ stream: true }));
 });
 
 function lint(files) {
   return gulp.src(files)
     .pipe($.eslint({ fix: true }))
-    .pipe(reload({stream: true, once: true}))
+    .pipe(reload({ stream: true, once: true }))
     .pipe($.eslint.format())
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
 }
@@ -102,13 +102,13 @@ gulp.task('lint:test', () => {
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
-    .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
+    .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
+    .pipe($.if(/\.js$/, $.uglify({ compress: { drop_console: true } })))
+    .pipe($.if(/\.css$/, $.cssnano({ safe: true, autoprefixer: false })))
     .pipe($.if(/\.html$/, $.htmlmin({
       collapseWhitespace: true,
       minifyCSS: true,
-      minifyJS: {compress: {drop_console: true}},
+      minifyJS: { compress: { drop_console: true } },
       processConditionalComments: true,
       removeComments: true,
       removeEmptyAttributes: true,
@@ -125,7 +125,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
+  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) { })
     .concat('app/fonts/**/*'))
     .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
 });
@@ -135,14 +135,14 @@ gulp.task('extras', () => {
     'app/*',
     '!app/*.html'
   ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
+      dot: true
+    }).pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'iconfont', 'fonts'], () => {
+    runSequence(['clean', 'wiredep'], ['scripts', 'iconfont'], ['fonts'], ['styles'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
@@ -215,7 +215,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'iconfont', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
 });
 
 gulp.task('default', () => {
